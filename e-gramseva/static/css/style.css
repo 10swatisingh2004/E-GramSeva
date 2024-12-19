@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Anton+SC&family=Metamorphous&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Mono&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h2{
+    font-family: "Poppins", serif;
+    color: #2ECC71 ;
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+}
+nav{
+    width: 100%;
+    height: 100px;
+    background-color: #2ECC71;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", serif;
+}
+nav img{
+    width: 100px;
+}
+.navbar a{
+    padding: 0px 30px;
+    font-size: larger;
+    color: white;
+    text-decoration: none;
+}
+.navbar a:hover{
+    color: #A8E6CF;
+}
+.hamburger {
+display: none;
+font-size: 30px;
+cursor: pointer;
+}
+.navbar{
+    margin-top: 30px;
+}
+main{
+    text-align: center;
+    margin: auto;
+}
+form{
+    text-align: center;
+    margin: auto;
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", serif;
+
+}
+input,select,textarea{
+    text-align: center;
+    margin: auto;
+    outline: none;
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: 2px solid #333;
+    margin-left: 5%;
+}
+label{
+    margin-right: 2%;
+}
+form button{
+
+    padding: 20px;
+    border-radius: 30px;
+    border: none;
+    background-color: #F4C542;
+    color: #fff;
+    width: 30%;
+    margin: auto;
+    font-family: "Poppins", serif;
+    
+}
+a{
+    color: #007BFF;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+
+}
+a:hover{
+    color: lightblue;
+}
+
+footer {
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #2ECC71;
+        width: 200px;
+        padding: 10px;
+    }
+    .navbar a {
+        margin: 10px 0;
+    }
+    .hamburger {
+        display: block;
+        color: white;
+        margin: 30px;
+    }
+    /* When hamburger is clicked, show the menu */
+.navbar.active {
+    display: flex;
+}}

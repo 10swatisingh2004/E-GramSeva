@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Update Service</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="name">Service Name:</label>
+    <input type="text" id="name" name="name" value="{{ service.name }}" required><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required>{{ service.description }}</textarea><br>
+
+    <label for="image">Service Image (optional):</label>
+    <input type="file" id="image" name="image"><br>
+
+    <button type="submit">Update Service</button>
+</form>
+
+<a href="{% url 'services' %}">Back to Services</a>
+{% endblock %}

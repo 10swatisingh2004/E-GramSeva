@@ -1,0 +1,100 @@
+{% extends 'base.html' %}  
+
+{% block content %}  
+<h2>Manage Applications</h2>  
+
+<table class="application-table">  
+    <thead>  
+        <tr>  
+            <th>Service Name</th>  
+            <th>Applicant</th>  
+            <th>Status</th>  
+            <th>Update Status</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        {% for application in applications %}  
+        <tr>  
+            <td>{{ application.service.name }}</td>  
+            <td>{{ application.user.username }}</td>  
+            <td>{{ application.get_status_display }}</td>  
+            <td>  
+                <form method="post" action="{% url 'update_application_status' application.id %}">  
+                    {% csrf_token %}  
+                    <select name="status" id="status">  
+                        <option value="pending" {% if application.status == "pending" %}selected{% endif %}>Pending</option>  
+                        <option value="approved" {% if application.status == "approved" %}selected{% endif %}>Approved</option>  
+                        <option value="rejected" {% if application.status == "rejected" %}selected{% endif %}>Rejected</option>  
+                    </select>  
+                    <button type="submit">Update</button>  
+                </form>  
+            </td>  
+        </tr>  
+        {% endfor %}  
+    </tbody>  
+</table>  
+<style>
+    .application-table {  
+    width: 100%;  
+    border-collapse: collapse;  
+    margin: 20px 0;  
+    font-size: 16px;  
+    text-align: left;  
+}  
+
+.application-table thead tr {  
+    background-color: #45a049;  
+    color: #fff;  
+    text-align: left;  
+    font-weight: bold;  
+}  
+
+.application-table th,  
+.application-table td {  
+    padding: 12px 15px;  
+    border: 1px solid #ddd;  
+}  
+
+.application-table tbody tr:nth-child(even) {  
+    background-color: #f9f9f9;  
+}  
+
+.application-table tbody tr:hover {  
+    background-color: #f1f1f1;  
+}  
+
+.application-table select {  
+    padding: 5px;  
+    font-size: 14px;  
+}  
+
+.application-table button {  
+    background-color: #4CAF50;  
+    color: white;  
+    border: none;  
+    padding: 5px 10px;  
+    cursor: pointer;  
+    font-size: 14px;  
+}  
+
+.application-table button:hover {  
+    background-color: #45a049;  
+}  
+
+@media (max-width: 768px) {  
+    .application-table {  
+        font-size: 14px;  
+    }  
+
+    .application-table th,  
+    .application-table td {  
+        padding: 8px 10px;  
+    }  
+
+    .application-table button {  
+        font-size: 12px;  
+    }  
+}  
+
+</style>
+{% endblock %}  

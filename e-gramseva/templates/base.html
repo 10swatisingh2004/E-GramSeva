@@ -1,0 +1,55 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital E Gram Panchayat</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+   <nav>
+    <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Gram Panchayat Logo" ></a>
+
+        <div class="navbar">
+            <a href="{% url 'home1' %}">Home</a>
+            {% if user.is_authenticated %}
+                <a>Hiii, {{ user.username }}  </a>   
+                {% if user.role == 'officer' %}
+                    <a href="{% url 'create_service' %}">Create Service</a>
+                    <a href="{% url 'staff_applications' %}">Manage Applications</a>
+                {% endif %}
+                {% if user.role == 'staff' %}
+                    <a href="{% url 'staff_applications' %}">Manage Applications</a>
+                {% endif %}
+                {% if user.role == 'user' %}
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'my_applications' %}">My Applications</a>
+                {% endif %}
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+            {% endif %}
+        </div>
+        <div class="hamburger" id="hamburger">
+            &#9776;
+        </div>  
+        </nav>
+ 
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 E-GramSeva</p>
+    </footer>
+    <script>const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+        
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+        </script>
+</body>
+</html>

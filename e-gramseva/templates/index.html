@@ -1,0 +1,395 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E GramSeva</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+      
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Anton+SC&family=Metamorphous&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Mono&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&display=swap');
+    </style>
+<style>
+    nav{
+        width: 100%;
+        height: 100px;
+        background-color: #2ECC71;
+        display: flex;
+        justify-content: space-between;
+        font-family: "Poppins", serif;
+    }
+    nav img{
+        width: 100px;
+    }
+    .navbar{
+        margin-top: 30px;
+    }
+    .navbar a{
+        padding: 0px 30px;
+        font-size: larger;
+        color: white;
+        text-decoration: none;
+    }
+    .navbar a:hover{
+        color: #A8E6CF;
+    }
+    .hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+    .hero{
+        display: flex;
+        justify-content: space-between;
+    }
+    .herocontent{
+        width: 50%;
+        font-size: xx-large;
+        padding: 30px;
+    }
+    h2{
+       color: #2ECC71 ;
+       font-family: "Poppins", serif;
+
+    }
+    p, ul{
+        font-family: "Open Sans", sans-serif;
+    }
+    .heroimg{
+        width: 400px;
+        padding: 30px;
+    }
+    .heroimg img{
+        width: 300px;
+        border-radius: 50%;
+    }
+    .about{
+        background-color: lightgray;
+        padding: 30px;
+        font-size: x-large;
+        background-image: url(https://imgs.search.brave.com/ALYKAsryxbooYgKesrTD0gfeXnNxR6nWCFphu95Lu5g/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMi9XaGVh/dC1QTkctSW1hZ2Vz/LnBuZw);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size:200px;
+    }
+    .about p{
+        width: 70%;
+      
+    }
+    .main {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space the two divs apart */
+  align-items: flex-start; /* Align items at the top */
+  padding: 20px; /* Add padding for better spacing */
+  gap: 20px; /* Add spacing between the two divs */
+}
+
+.mission,
+.choose {
+  flex: 1; /* Make both divs take equal space */
+  max-width: 45%; /* Limit the width to balance content layout */
+}
+
+.mission h2,
+.choose h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: disc; /* Use bullet points for lists */
+  padding-left: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+.work {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap; /* Allow steps to stack on smaller screens */
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.step {
+  flex: 1 1 200px; /* Each step takes equal space, min 200px width */
+  max-width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.step i {
+  font-size: 2.5rem;
+  color: #4caf50; /* Green color for icons */
+  margin-bottom: 10px;
+}
+
+.step h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.step p {
+  font-size: 1rem;
+  color: #666;
+}
+.newsletter{
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+.news{
+    display: flex;
+    justify-content: space-evenly;
+}
+.news p{
+    width: 50%;
+}
+button{
+    padding: 20px;
+    border-radius: 30px;
+    border: none;
+    background-color: #F4C542;
+    color: #fff;
+    font-family: "Poppins", serif;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 20px;
+
+}
+footer img{
+    width: 100px;
+    height: 100px;
+}
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #2ECC71;
+        width: 200px;
+        padding: 10px;
+    }
+    .navbar a {
+        margin: 10px 0;
+    }
+    .hamburger {
+        display: block;
+        color: white;
+        margin: 30px;
+    }
+    /* When hamburger is clicked, show the menu */
+.navbar.active {
+    display: flex;
+}
+h2{
+    font-size: large;
+}
+.herocontent {
+
+    font-size: medium;
+    width: 90%;
+}
+.heroimg {
+    width: 150px;
+    padding: 10px;
+}
+.heroimg img {
+    width: 150px;
+    margin-top: 15px;
+}
+.about {
+
+    padding: 10px;
+    font-size: small;
+    background-size:100px;
+}
+.about p {
+    width: 90%;
+}
+.main {
+    font-size: x-small;
+}
+.mission h2, .choose h2 {
+    font-size:medium;
+  
+}
+.step {
+    flex: 1 1 200px;
+    max-width: 100px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.step i {
+    font-size: larger;
+}
+.step h3 {
+    font-size: medium;
+   
+}
+.step p {
+  font-size: x-small;
+}
+.news p {
+    font-size: x-small;
+    
+}
+p{
+    font-size: x-small;
+}
+.newsletter {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+}
+button {
+    padding: 10px;
+    border-radius: 30px;
+    font-size: x-small;
+}
+.contant{
+    width: 50%;
+}
+}
+</style>
+<body>
+    <nav>
+        <img src="{% static 'images/logo.png' %}" alt="Gram Panchayat Logo" >
+        <div class="navbar">
+            <a href="{% url 'home'%}">Home</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'login'%}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            &#9776;
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="herocontent">
+            <h2>
+                Welcome to <br><span style="color: #2ECC71;">E-GramSeva</span>
+            </h2>
+            <p>Empowering Villages with Technology</p>
+        </div>
+        <div class="heroimg">
+            <img src="https://imgs.search.brave.com/ti0-6gRetnD2gJTR0QkjSjuboU8jFgjDYBIKDOhaqaE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG5i/YnNyLnMzd2Fhcy5n/b3YuaW4vczMxNjAy/NmQ2MGZmOWI1NDQx/MGIzNDM1YjQwM2Fm/ZDIyNi91cGxvYWRz/LzIwMjQvMDYvMjAy/NDA2MTExNzcyMzY3/MDk5LmpwZw" alt="">
+        </div>
+        
+    </section>
+    <section class="about">
+        <h2>About Us</h2>
+        <p>The E GramSeva is a modern platform dedicated to transforming rural governance.
+             By streamlining access to essential government services and schemes, we aim to make
+              village administration more transparent, efficient, and citizen-friendly. 
+              With our platform, villagers can apply for services, track their applications, 
+              and stay informed about the latest government schemes—all from the comfort of their homes.</p>
+    </section>
+    <section class="main">
+        <div class="mission">
+            <h2>
+                Our Mission
+            </h2>
+            <p>To simplify and digitize Gram Panchayat services, enabling every citizen to:</p>
+            <ul>
+                <li>Access government schemes easily</li>
+                <li>Apply for services online</li>
+                <li>Track application progress in real-time</li>
+                <li>Enhance accountability and transparency in village administration</li>
+            </ul>
+        </div>
+        <div class="choose">
+            <h2>Why Choose Us? </h2>
+            <ul>
+                <li><strong>User-Friendly Interface:</strong> Simple and intuitive design for all users.</li>
+                <li><strong>Efficient Service Management:</strong> From applications to approvals, all managed online.</li>
+                <li><strong>Real-Time Updates:</strong> Stay informed about the status of your application anytime, anywhere.</li>
+                <li><strong>Transparent Governance:</strong>Bridging the gap between citizens and authorities.</li>
+            </ul>
+        </div>
+    </section>
+    <section class="work">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <i class="fas fa-user-plus"></i>
+                <h3>Register</h3>
+                <p>Create an account to access all services.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-search"></i>
+                <h3>Explore Services</h3>
+                <p>Browse available schemes and services in your Panchayat.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-file-alt"></i>
+                <h3>Apply Online</h3>
+                <p>Submit applications for the services you need.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-tasks"></i>
+                <h3>Track Progress</h3>
+                <p>Get real-time updates on the status of your requests.</p>
+            </div>
+        </div>
+    </section>
+    <section class="newsletter">
+        <h2>Get Started Today!</h2>
+        <div class="news">
+            <p>Click below to register or log in to experience the ease of digital governance.</p>
+            <div class="btn">
+                <button>
+                   <a href="reg.html" style="color: #fff; text-decoration: none;"> Register Now</a>
+                </button>
+                <button>
+                    <a href="login.html" style="color: #fff; text-decoration: none;">Login</a>
+                </button>
+            </div>
+        
+        </div>
+        
+    </section>
+    <footer>
+        <img src="{% static 'images/logo.png' %}" alt="Gram Panchayat Logo" >
+        <div class="contant">
+            <h2>Contact Us!</h2>
+            <p>Have any questions? Reach out to us for assistance:</p>
+            <p><i class="fas fa-envelope"></i>Email:  support@egramseva.com</p>
+            <p><i class="fas fa-phone"></i>Phone: +91 1500 2533 3333</p>
+        </div>
+    </footer>
+    <footer style="padding: 15px; text-align: center; font-size: 14px;">
+        <p>&copy; 2024 E GramSeva. All Rights Reserved.</p>
+        <p>Empowering Villages Digitally</p>
+    </footer>
+    <script>const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+        
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+        </script>
+</body>
+</html>
